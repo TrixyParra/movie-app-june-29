@@ -1,5 +1,4 @@
 import { useState } from "react";  // import from React Library 
-import HighlightCard from "./HighlightCard";
 import MovieCard from "./MovieCard";
 
 // const movieData = {
@@ -15,11 +14,6 @@ import MovieCard from "./MovieCard";
 //             <h2 style={{ fontStyle: "italic" }}>
 //                 Choose from thousands of films!
 //             </h2> 
-//             <div style={{ display: "flex", justifyContent:"space-evenly" }}>
-//                 <HighlightCard header="Select a Holiday" /> 
-//                 <HighlightCard header="Pick a Design" /> 
-//                 <HighlightCard header="Let us Deliver" /> 
-//             </div> 
 //             <div style={{ display: "flex", justifyContent:"center", marginTop: 40 }}>
 //                 <MovieCard title={movieData.Title} year={movieData.Year} rated={movieData.Rated} /> 
 //             </div> 
