@@ -1,22 +1,25 @@
-export default function MovieCard(props) {
-    return (
-        <div className="MovieCard">
-            <h1><b>Title: </b> {props.title}</h1> 
-            <p><b>Year: </b> {props.year}</p> 
-            <p><b>Rated: </b> {props.rated}</p> 
-        </div> 
-    ); 
-} 
-
-// export default function MovieCard() {
+// export default function MovieCard(props) {
 //     return (
-//         <>
-//             {movieData.map(({ Title, Year, Rated }) => (
-//                 <p key={movieData}>Title {Title}</p>
-//                 <p key={movieData}>Year: {Year}</p> 
-//                 <p key={movieData}>Rated: {Rated}</p> 
-//             ))}
-//         </>
-        
-//     );
-// }
+//         <div className="MovieCard">
+//             <h1><b>Title: </b> {props.title}</h1> 
+//             <p><b>Year: </b> {props.year}</p> 
+//             <p><b>Rated: </b> {props.rated}</p> 
+//         </div> 
+//     ); 
+// } 
+
+export default function MovieCard(props) {
+    const movies = props.movies; 
+    
+    return (
+        <div className="movie-card" style={{ display: "flex", justifyContent:"space-evenly", marginTop: 80 }}>
+            {movies.map((movie) => (
+                <div className="movie-preview" key={movie.id}>
+                    <h2>{ movie.Title }</h2> 
+                    <p>Year: { movie.Year }</p> 
+                    <p>Rated: { movie.Rated }</p> 
+                </div> 
+            ))}
+        </div> 
+    );
+}

@@ -1,13 +1,71 @@
+import { useState } from "react";  // import from React Library 
 import HighlightCard from "./HighlightCard";
 import MovieCard from "./MovieCard";
 
-const movieData = {
-    Title: "The Avengers",
-    Year: "2012",
-    Rated: "PG-13",
-}; 
+// const movieData = {
+//     Title: "The Avengers",
+//     Year: "2012",
+//     Rated: "PG-13",
+// }; 
 
-// const movieData = [
+// export default function Home() {
+//     return (
+//         <div>
+//             <h1 className="HeaderText">Movie App</h1>
+//             <h2 style={{ fontStyle: "italic" }}>
+//                 Choose from thousands of films!
+//             </h2> 
+//             <div style={{ display: "flex", justifyContent:"space-evenly" }}>
+//                 <HighlightCard header="Select a Holiday" /> 
+//                 <HighlightCard header="Pick a Design" /> 
+//                 <HighlightCard header="Let us Deliver" /> 
+//             </div> 
+//             <div style={{ display: "flex", justifyContent:"center", marginTop: 40 }}>
+//                 <MovieCard title={movieData.Title} year={movieData.Year} rated={movieData.Rated} /> 
+//             </div> 
+//         </div> 
+//     ); 
+// } 
+
+
+export default function Home() {
+    const [movies, setMovie] = useState([
+        {
+            Title: "The Avengers",
+            Year: "2012",
+            Rated: "PG-13", 
+            id: 1 
+        }, 
+        {
+            Title: "Thor",
+            Year: "2011",
+            Rated: "PG-13", 
+            id: 2 
+        }, 
+        {
+            Title: "Iron Man",
+            Year: "2008",
+            Rated: "PG-13", 
+            id: 3 
+        }
+    ]);
+
+    return (
+        <div>
+            <h1 className="HeaderText">Movie App</h1>
+            <h2 style={{ fontStyle: "italic" }}>
+                Choose from thousands of films!
+            </h2> 
+            
+            <div>
+                <MovieCard movies={movies} />  {/* creating a property value to pass the data as a prop; a prop */}
+            </div> 
+        </div> 
+    );     
+} 
+
+
+// const movieData = () => [
 //     {
 //         Title: "The Avengers",
 //         Year: "2012",
@@ -65,24 +123,3 @@ const movieData = {
     // Production: "N/A",
     // Website: "N/A",
     // Response: "True"
-
-
-export default function Home() {
-    return (
-        <div>
-            <h1 className="HeaderText">Movie App</h1>
-            <h2 style={{ fontStyle: "italic" }}>
-                Choose from thousands of films!
-            </h2> 
-            <div style={{ display: "flex", justifyContent:"space-evenly" }}>
-                <HighlightCard header="Select a Holiday" /> 
-                <HighlightCard header="Pick a Design" /> 
-                <HighlightCard header="Let us Deliver" /> 
-            </div> 
-            <div style={{ display: "flex", justifyContent:"center", marginTop: 40 }}>
-                <MovieCard title={movieData.Title} year={movieData.Year} rated={movieData.Rated} /> 
-            </div> 
-        </div> 
-    ); 
-        
-} 
