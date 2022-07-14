@@ -13,13 +13,17 @@ export default function MovieCard(props) {
     
     return (
         <div className="movie-card" style={{ display: "flex", justifyContent:"space-evenly", marginTop: 80 }}>
-            {movies.map((movie) => (
-                <div className="movie-preview" key={movie.id}>
-                    <h2>{ movie.Title }</h2> 
-                    <p>Year: { movie.Year }</p> 
-                    <p>Rated: { movie.Rated }</p> 
-                </div> 
-            ))}
+            {movies.length > 0 ? ( 
+                movies.map((movie) => ( 
+                    <div className="movie-preview" key={movie.id}>
+                        <h2>{ movie.Title }</h2> 
+                        <p><b>Year:</b> { movie.Year }</p> 
+                        <p><b>Rated:</b> { movie.Rated }</p> 
+                    </div> 
+                )) 
+            ) : (
+                <div>No Movies Found</div> 
+            )} 
         </div> 
-    );
-}
+    ); 
+} 
